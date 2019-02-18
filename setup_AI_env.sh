@@ -15,7 +15,7 @@ if [[ $VIRTUAL_ENV == "" ]];  then
 
 	echo "Activate the new environment by command:"
 	echo ""
-	echo "	source $env_name/bin/activate"
+	echo "	source AI/bin/activate"
 	echo ""
 	echo "Then, execute this script one more time in new environment."
 
@@ -34,7 +34,7 @@ else
 	mkdir build
 	cd build
 	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=$cwd -D WITH_TBB=ON -D WITH_V4L=ON -D PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
-	make -j7
+	make -j4
 	make install
 	cd ..
 	rm -R build
